@@ -1,10 +1,10 @@
 import sys
 import random
 
-MIN_NUM_CHARACTERS = 5
-MAX_NUM_CHARACTERS = 20
-MIN_NUM_LINES = 10
-MAX_NUM_LINES = 40
+MIN_NUMBER = 0
+MAX_NUMBER = 10
+MIN_NUM_LINES = 100
+MAX_NUM_LINES = 400
 
 num_lines = 10
 if len(sys.argv) > 1:
@@ -14,9 +14,5 @@ else:
 
 
 for i in range(num_lines):
-  num_chars = random.randint(MIN_NUM_CHARACTERS, MAX_NUM_CHARACTERS)
-  strbuffer = []
-  for j in range(num_chars):
-    strbuffer.append(str(random.randint(0,1)))
-  print ''.join(strbuffer)
+  print random.randint(MIN_NUMBER, MAX_NUMBER)
 

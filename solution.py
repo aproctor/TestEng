@@ -6,10 +6,18 @@ if len(sys.argv) < 2:
 
 source_file = open(sys.argv[1],"r")
 
-checksum = 0
+dictionary = {}
 for line in source_file:
-    for char in line:
-      if char == '1':
-        checksum += 1
+  num = int(line)
+  val = dictionary[num] if num in dictionary else 0
+  dictionary[num] = val + 1
 
-print checksum
+smallest_key = 0
+smallest_count = 99999999999
+for key, value in dictionary.items():
+  print key, ": ", value
+  if ((value == smallest_count and key < smallest_key) or value < smallest_count):
+    smallest_key = key
+    smallest_count = value
+
+print smallest_key, " ", smallest_count
